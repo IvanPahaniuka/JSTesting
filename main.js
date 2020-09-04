@@ -1,14 +1,17 @@
 'use strict';
 
-let arr = [2,6,1,7,4,5,7,8,2,10,2,1,4];
+let counter1 = makeCounter();
+counter1();
+let counter2 = makeCounter();
+counter2();
+counter2();
+alert( "counter1: " + counter1() );
+alert( "counter2: " + counter2() );
 
-alert( max(...arr) );
+function makeCounter(){
+   let count = 0;
 
-function max(...args){
-   let max = args[0];
-   for (let arg of args)
-      if (arg > max)
-         max = arg;
-
-   return max;
+   return () => {
+      return ++count;
+   }
 }
