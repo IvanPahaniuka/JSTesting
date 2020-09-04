@@ -1,16 +1,9 @@
 'use strict';
 
-let salaries = {
-   "John": 100,
-   "Pete": 300,
-   "Mary": 250
- };
- 
-alert( sumSalaries(salaries) );
+let user = { name: "John", years: 30 };
 
-function sumSalaries(obj) {
-   return Object.values(obj)
-      .reduce((prev, item) => {
-         return prev + item;
-      }, 0);
-}
+let {name, years: age, isAdmin = false} = user;
+
+alert( name ); // John
+alert( age ); // 30
+alert( isAdmin ); // false
