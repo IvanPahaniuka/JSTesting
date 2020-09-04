@@ -1,17 +1,14 @@
 'use strict';
 
-let counter1 = makeCounter();
-counter1();
-let counter2 = makeCounter();
-counter2();
-counter2();
-alert( "counter1: " + counter1() );
-alert( "counter2: " + counter2() );
+let arr = [1, 2, 3, 4, 5, 6, 7];
 
-function makeCounter(){
-   let count = 0;
+alert( arr.filter(inBetween(3, 6)) );
 
-   return () => {
-      return ++count;
-   }
+alert( arr.filter(inArray([1, 2, 10])) ); 
+
+function inBetween(a, b){
+   return x => (a <= x && x <= b);
+}
+function inArray(arr){
+   return x => arr.includes(x);
 }
