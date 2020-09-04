@@ -1,21 +1,16 @@
 'use strict';
 
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+let salaries = {
+   "John": 100,
+   "Pete": 300,
+   "Mary": 250
+ };
+ 
+alert( sumSalaries(salaries) );
 
-alert( aclear(arr) );
-
-function aclear(arr) {
-   let map = new Map();
-
-   for (let word of arr){
-      let sorted = word
-         .toLowerCase()
-         .split("")
-         .sort()
-         .join("");
-
-      map.set(sorted, word);
-   }
-
-   return Array.from(map.values());
+function sumSalaries(obj) {
+   return Object.values(obj)
+      .reduce((prev, item) => {
+         return prev + item;
+      }, 0);
 }
