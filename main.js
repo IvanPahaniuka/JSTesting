@@ -1,25 +1,21 @@
 'use strict';
 
-function Calculator(){
-  this.value1 = 0;
-  this.value2 = 0;
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-  this.read = function(){
-    this.value1 = +prompt('Введите значение 1');
-    this.value2 = +prompt('Введите значение 2');
-  }
+alert( aclear(arr) );
 
-  this.sum = function(){
-    return this.value1 + this.value2;
-  }
+function aclear(arr) {
+   let map = new Map();
 
-  this.mul = function(){
-    return this.value1 * this.value2;
-  }
+   for (let word of arr){
+      let sorted = word
+         .toLowerCase()
+         .split("")
+         .sort()
+         .join("");
+
+      map.set(sorted, word);
+   }
+
+   return Array.from(map.values());
 }
-
-let calculator = new Calculator();
-calculator.read();
-
-alert( "Sum=" + calculator.sum() );
-alert( "Mul=" + calculator.mul() );
