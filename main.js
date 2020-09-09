@@ -1,13 +1,17 @@
 'use strict';
 
-i = 0;
-while (i < 10){
-  console.log(i);
-  i++;
+let factFunc = function fact(a){
+  if (a <= 1)
+  {
+    fact.lastRes = 1;
+    return 1;
+  }
+
+  let res = fact(a-1)*a;
+  fact.lastRes = res;
+  return res;
 }
 
-if (i == 10){
-  var i = 5;
-}
-
-console.log(i);
+factFunc(5);
+console.log( `${factFunc.name}: ${factFunc.lastRes}` );
+console.log( fact(5) );
