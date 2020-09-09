@@ -1,14 +1,13 @@
 'use strict';
 
-let arr = [1, 2, 3, 4, 5, 6, 7];
-
-alert( arr.filter(inBetween(3, 6)) );
-
-alert( arr.filter(inArray([1, 2, 10])) ); 
-
-function inBetween(a, b){
-   return x => (a <= x && x <= b);
+i = 0;
+while (i < 10){
+  console.log(i);
+  i++;
 }
-function inArray(arr){
-   return x => arr.includes(x);
+
+if (i == 10){
+  var i = 5;
 }
+
+console.log(i);
