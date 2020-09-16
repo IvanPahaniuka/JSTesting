@@ -4,7 +4,7 @@ function f() {
   alert("Hello!");
 }
 
-f.__proto__.defer = function(ms) {
+Object.getPrototypeOf(f).defer = function(ms) {
   setTimeout(f, ms);
 };
 
