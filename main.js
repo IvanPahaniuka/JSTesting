@@ -1,25 +1,12 @@
 'use strict';
 
-let obj = {
-  _name: "Ivan",
-  get name(){
-    return this._name;
-  },
-  set name(value) {
-    if (value !== "Oleg")
-      this._name = value;
-  }
+function f() {
+  alert("Hello!");
 }
 
-Object.defineProperties(obj, {
-  age: {
-    value: 19,
-    enumerable: true,
-    writable: false,
-    configurable: false 
-  }
-});
-let descr = Object.getOwnPropertyDescriptor(obj, "age");
+f.__proto__.defer = function(ms) {
+  setTimeout(f, ms);
+};
 
-alert( obj.age );
+f.defer(1000);
 
